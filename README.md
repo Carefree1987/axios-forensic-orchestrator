@@ -1,6 +1,9 @@
 # AXIOS: Forensic-Grade Trading Orchestrator 🦅
 
+[![CI](https://github.com/Carefree1987/axios-forensic-orchestrator/actions/workflows/ci.yml/badge.svg)](https://github.com/Carefree1987/axios-forensic-orchestrator/actions/workflows/ci.yml)
+
 [English] | [Deutsch](#deutsch)
+
 
 > **For Hiring Managers**: See the [TL;DR](docs/hiring_manager_tldr.en.md) or verify the system in 90 seconds below.
 

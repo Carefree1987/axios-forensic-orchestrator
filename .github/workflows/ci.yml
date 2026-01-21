@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install detect-secrets
+
+      - name: Generate Synthetic Proof Pack
+        run: |
+          python scripts/generate_synthetic_proof_pack.py
+
+      - name: Verify Golden Proof Pack
+        run: |
+          python scripts/verify_synthetic_pack.py examples/proof_pack_synthetic/golden_a1b2c3d4
+
+      - name: Run Secret Scan
+        run: |
+          detect-secrets scan --exclude-files "examples/proof_pack_synthetic/.*" > security_scan_ci.json
+          echo "Secret scan completed"
+          cat security_scan_ci.json | python -c "import json,sys; r=json.load(sys.stdin); print(f'Secrets found: {sum(len(v) for v in r.get(\"results\", {}).values())}')"
+
+      - name: Upload Security Scan Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-report
+          path: security_scan_ci.json
