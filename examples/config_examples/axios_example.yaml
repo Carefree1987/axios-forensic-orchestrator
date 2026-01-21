@@ -1,0 +1,19 @@
+# AXIOS Example Configuration (Sanitized)
+# This file contains no secrets or proprietary values.
+
+mode: PAPER_L1
+exchange: BINANCE_FUTURES
+
+risk:
+  max_global_exposure: 0.5
+  max_symbol_exposure: 0.25
+  kill_switch_threshold: -0.05
+
+strategy:
+  type: baseline_momentum
+  lookback_bars: 20
+  # Threshold values are abstracted for security
+
+logging:
+  level: INFO
+  trace_enabled: true
