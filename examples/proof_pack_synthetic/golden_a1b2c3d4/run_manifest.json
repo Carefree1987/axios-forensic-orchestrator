@@ -1,0 +1,11 @@
+{
+    "run_id": "golden_a1b2c3d4",
+    "timestamp": "2026-01-21T13:45:00Z",
+    "mode": "PAPER_L1",
+    "market": "BTCUSDT",
+    "exchange": "SYNTHETIC_DEMO",
+    "declared_symbols": [
+        "BTCUSDT"
+    ],
+    "version": "1.3.0-golden"
+}

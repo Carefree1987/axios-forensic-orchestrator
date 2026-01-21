@@ -1,0 +1,11 @@
+{"ts": "2026-01-21T13:45:01Z", "event": "BOOTSTRAP", "state": "INIT", "details": "Loading configuration"}
+{"ts": "2026-01-21T13:45:02Z", "event": "PREFLIGHT_START", "state": "CHECKING", "details": "Running Proof-6 gates"}
+{"ts": "2026-01-21T13:45:03Z", "event": "GATE_PASS", "gate": "INTEGRITY", "score": 10.0}
+{"ts": "2026-01-21T13:45:03Z", "event": "GATE_PASS", "gate": "CONNECTIVITY", "score": 10.0}
+{"ts": "2026-01-21T13:45:03Z", "event": "GATE_PASS", "gate": "RISK_CAPS", "score": 10.0}
+{"ts": "2026-01-21T13:45:04Z", "event": "GATE_PASS", "gate": "SENTINEL", "score": 10.0}
+{"ts": "2026-01-21T13:45:04Z", "event": "GATE_PASS", "gate": "COMPLIANCE", "score": 10.0}
+{"ts": "2026-01-21T13:45:05Z", "event": "GATE_PASS", "gate": "HANDOFF", "score": 10.0}
+{"ts": "2026-01-21T13:45:05Z", "event": "PREFLIGHT_COMPLETE", "state": "READY", "details": "All gates PASS"}
+{"ts": "2026-01-21T13:45:06Z", "event": "RUN_START", "state": "EXECUTING", "details": "Entering main loop"}
+{"ts": "2026-01-21T13:46:00Z", "event": "RUN_END", "state": "COMPLETE", "details": "Clean shutdown"}

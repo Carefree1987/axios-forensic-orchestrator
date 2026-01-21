@@ -2,10 +2,18 @@
 
 [English] | [Deutsch](#deutsch)
 
-**AXIOS** is a high-integrity execution framework designed for institutional-grade reliability in algorithmic trading. It prioritizes **forensic auditability**, **multilayered safety gates**, and a strict **"proof-first" discipline**.
+> **For Hiring Managers**: See the [TL;DR](docs/hiring_manager_tldr.en.md) or verify the system in 90 seconds below.
 
-> [!NOTE]
-> This is a **Showcase Repository**. It contains the architectural blueprint, procedural documentation, and synthetic forensic artifacts. Proprietary execution logic and secrets are omitted by design.
+---
+
+## 🎯 Verify in 90 Seconds
+
+```bash
+git clone https://github.com/Carefree1987/axios-forensic-orchestrator.git
+cd axios-forensic-orchestrator
+python scripts/verify_synthetic_pack.py examples/proof_pack_synthetic/golden_a1b2c3d4
+```
+**Expected Output**: `GLOBAL STATUS: PASS`
 
 ---
 
@@ -20,35 +28,66 @@ graph TD
     E --> F[Forensic Evidence Archive]
 ```
 
+---
+
 ## 🛡️ The "Proof-6" Gate System
-AXIOS enforced 6 mandatory verification gates before any micro-live execution:
 
-| Gate | Purpose | Verification Method |
+| Gate | Purpose | Verification |
 | :--- | :--- | :--- |
-| **G1: Integrity** | Verify code state against known SHA256 baseline. | `git hash-object` / Manifest check |
-| **G2: Connectivity** | Ensure secure, low-latency path to exchange. | Sentinel heartbeat / Ping audit |
-| **G3: Risk Caps** | Strict enforcement of symbol & global exposure. | Deterministic RiskV5 Controller |
-| **G4: Sentinel** | Multi-account safety check (Anti-Liquidation). | External heartbeat monitoring |
-| **G5: Compliance** | Bilingual log-compliance and audit readiness. | Forensic JSONL trace |
-| **G6: Final Handoff** | Bundle all evidence into a non-repudiable ZIP. | ZIP SHA256 + Manual Sign-off |
+| **G1: Integrity** | Code state vs SHA256 baseline | Manifest check |
+| **G2: Connectivity** | Exchange latency < 50ms | Sentinel ping |
+| **G3: Risk Caps** | Exposure limits enforced | RiskV5 Controller |
+| **G4: Sentinel** | External safety watchdog | Heartbeat |
+| **G5: Compliance** | Forensic logging active | JSONL trace |
+| **G6: Handoff** | Evidence ZIP + SHA256 | Signed bundle |
 
 ---
 
-## 📈 Run Ladder (Phases)
-AXIOS follows a strict progression ladder to manage risk from development to production:
+## 📈 Run Ladder (Operational Phases)
 
-- **L0: Sandbox** (Synthetic data, local logic test)
-- **L1: Paper** (Real-time data, paper broker, zero risk)
-- **L2: Micro-Live** (Strictly capped live orders, forensic audit required)
-- **L3: Production** (Full-scale execution, restricted access)
+| Phase | Name | Description | Risk |
+| :---: | :--- | :--- | :---: |
+| **L0** | Sandbox | Synthetic data, logic tests | None |
+| **L1** | Paper | Real-time data, zero capital | None |
+| **L2** | Micro-Live | Capped live orders, audit required | Low |
+| **L3** | Production | Full execution, restricted | High |
 
 ---
 
-## 🛠️ Recruiter Quick-Start
-To evaluate the technical quality of this project in 3 minutes:
-1. **Browse Architecture**: See [docs/architecture.en.md](docs/architecture.en.md).
-2. **Verify a Run**: Run `python scripts/verify_synthetic_pack.py examples/proof_pack_synthetic/run_8a2b3c4d` to see the audit engine in action.
-3. **Review Cleanliness**: Check the code structure and forensic logs in `/examples`.
+## 🛠️ Skills Matrix (Snapshot)
+
+| Skill | Level | Evidence |
+| :--- | :---: | :--- |
+| Python | ⭐⭐⭐⭐⭐ | `/scripts/`, typed contracts |
+| System Architecture | ⭐⭐⭐⭐⭐ | `/docs/architecture.en.md` |
+| Security | ⭐⭐⭐⭐⭐ | Zero secrets, detect-secrets |
+| Linux/DevOps | ⭐⭐⭐⭐⭐ | Server hardening, VLANs |
+| Technical Writing | ⭐⭐⭐⭐⭐ | Bilingual docs (EN/DE) |
+
+[Full Skills Matrix →](docs/skills_matrix.en.md)
+
+---
+
+## 📂 Documentation Index
+
+| Document | EN | DE |
+| :--- | :---: | :---: |
+| Hiring Manager TL;DR | [EN](docs/hiring_manager_tldr.en.md) | [DE](docs/hiring_manager_tldr.de.md) |
+| Architecture | [EN](docs/architecture.en.md) | [DE](docs/architecture.de.md) |
+| Proof System | [EN](docs/proof_system.en.md) | [DE](docs/proof_system.de.md) |
+| Skills Matrix | [EN](docs/skills_matrix.en.md) | [DE](docs/skills_matrix.de.md) |
+| Roadmap | [EN](docs/roadmap.en.md) | [DE](docs/roadmap.de.md) |
+| Security | [EN](docs/security.en.md) | [DE](docs/security.de.md) |
+| FAQ | [EN](docs/faq_recruiters.en.md) | [DE](docs/faq_recruiters.de.md) |
+| Quickstart | [Guide](docs/quickstart.md) | |
+
+---
+
+## 🔐 Security Posture
+
+- **No Secrets**: This repository contains **ZERO** API keys, IPs, or credentials.
+- **Synthetic Only**: All proof packs are artificially generated for demonstration.
+- **Automated Scans**: `detect-secrets` integrated via pre-commit hooks.
 
 ---
 
@@ -58,38 +97,25 @@ To evaluate the technical quality of this project in 3 minutes:
 
 [English](#axios-forensic-grade-trading-orchestrator-) | [Deutsch]
 
-**AXIOS** ist ein High-Integrity-Execution-Framework, entwickelt für institutionelle Zuverlässigkeit im algorithmischen Handel. Der Fokus liegt auf **forensischer Auditierbarkeit**, **mehrstufigen Safety-Gates** und einer strikten **"Proof-First" Disziplin**.
+> **Für Hiring Manager**: Siehe das [TL;DR](docs/hiring_manager_tldr.de.md) oder verifiziere das System in 90 Sekunden oben.
 
-> [!NOTE]
-> Dies ist ein **Showcase-Repository**. Es enthält den Architektur-Entwurf, Prozessdokumentationen und synthetische forensische Artefakte. Proprietäre Ausführungslogik und Geheimnisse sind systembedingt ausgelassen.
+## 🎯 In 90 Sekunden verifizieren
 
----
-
-## 🏗️ Systemarchitektur
-
-(Siehe Diagramm oben im englischen Bereich)
-
-## 🛡️ Das "Proof-6" Gate-System
-AXIOS erzwingt 6 obligatorische Verifizierungsschritte vor jeder Micro-Live-Ausführung:
-
-| Gate | Zweck | Verifizierungsmethode |
-| :--- | :--- | :--- |
-| **G1: Integrität** | Code-Zustand gegen SHA256-Baseline prüfen. | Manifest-Abgleich |
-| **G2: Konnektivität** | Sicherer Pfad zur Börse (Low-Latency). | Sentinel Heartbeat |
-| **G4: sentinel** | Multi-Account Schutz (Anti-Liquidation). | Externes Monitoring |
-| **G6: Handoff** | Bündelung aller Beweise in ein ZIP-Archiv. | ZIP SHA256 Checksumme |
+```bash
+git clone https://github.com/Carefree1987/axios-forensic-orchestrator.git
+cd axios-forensic-orchestrator
+python scripts/verify_synthetic_pack.py examples/proof_pack_synthetic/golden_a1b2c3d4
+```
+**Erwarteter Output**: `GLOBAL STATUS: PASS`
 
 ---
 
-## 🛠️ Schnelltest für Recruiter
-Bewerten Sie die technische Qualität in 3 Minuten:
-1. **Architektur**: Siehe [docs/architecture.de.md](docs/architecture.de.md).
-2. **Run verifizieren**: Führen Sie `python scripts/verify_synthetic_pack.py` aus, um die Audit-Engine live zu erleben.
+## 🔐 Sicherheitskonzept
+
+- **Keine Secrets**: Dieses Repo enthält **KEINE** API-Keys, IPs oder Credentials.
+- **Nur Synthetisch**: Alle Proof Packs sind künstlich generiert.
+- **Automatisierte Scans**: `detect-secrets` via pre-commit Hooks.
 
 ---
 
-## 📜 Security Posture
-- **No Secrets**: Alle API-Keys und IPs sind geschwärzt oder synthetisch.
-- **Audit Pack**: Die beigefügten Beispiele dienen der Demonstration des forensischen Workflows.
-
-**Dennis** | [LinkedIn](https://linkedin.com/in/<DENNIS_LINKEDIN>) | [GitHub](https://github.com/Carefree1987)
+**Dennis** | [GitHub](https://github.com/Carefree1987)
