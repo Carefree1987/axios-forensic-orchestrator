@@ -16,11 +16,19 @@ git clone https://github.com/Carefree1987/axios-forensic-orchestrator.git
 cd axios-forensic-orchestrator
 python scripts/verify_synthetic_pack.py examples/proof_pack_synthetic/golden_a1b2c3d4
 ```
-**Expected Output**: `GLOBAL STATUS: PASS`
+
+![Forensic Pass Audit](assets/screenshots/forensic_pass.png)
+*Figure 1: Automated forensic gate verification (L2 Micro-Live Readiness)*
 
 ---
 
 ## 🏗️ System Architecture
+
+![CI Status](assets/screenshots/ci_pass.png)
+*Figure 2: Continuous Integration Pipeline (Security & Integrity)*
+
+---
+
 
 ```mermaid
 graph TD
