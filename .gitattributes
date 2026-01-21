@@ -1,0 +1,7 @@
+# Force LF for forensic artifacts to maintain SHA256 integrity across platforms
+*.json text eol=lf
+*.jsonl text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+/assets/screenshots/*.png binary
