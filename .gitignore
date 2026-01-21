@@ -1,0 +1,37 @@
+# AXIOS Showcase Gitignore - Security First
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project secrets (Additional hardening)
+secrets/
+*.key
+*.pem
+id_rsa*
+*.jsonl
+!examples/proof_pack_synthetic/**/*.jsonl
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Synthetic output only
+!examples/proof_pack_synthetic/
+!scripts/

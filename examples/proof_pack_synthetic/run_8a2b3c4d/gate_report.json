@@ -1,0 +1,35 @@
+{
+  "overall_status": "PASS",
+  "gates": [
+    {
+      "name": "INTEGRITY",
+      "status": "PASS",
+      "score": 10.0
+    },
+    {
+      "name": "CONNECTIVITY",
+      "status": "PASS",
+      "score": 10.0
+    },
+    {
+      "name": "RISK_CAPS",
+      "status": "PASS",
+      "score": 10.0
+    },
+    {
+      "name": "SENTINEL",
+      "status": "PASS",
+      "score": 10.0
+    },
+    {
+      "name": "COMPLIANCE",
+      "status": "PASS",
+      "score": 10.0
+    },
+    {
+      "name": "HANDOFF",
+      "status": "PASS",
+      "score": 10.0
+    }
+  ]
+}

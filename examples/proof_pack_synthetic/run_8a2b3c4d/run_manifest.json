@@ -1,0 +1,11 @@
+{
+  "run_id": "8a2b3c4d",
+  "timestamp": "2026-01-21T09:49:18.353617+00:00",
+  "mode": "PAPER_L1",
+  "market": "BTCUSDT",
+  "exchange": "BINANCE_FUTURES",
+  "declared_symbols": [
+    "BTCUSDT"
+  ],
+  "version": "1.2.0-forensic"
+}
