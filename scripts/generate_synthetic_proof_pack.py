@@ -22,9 +22,10 @@ def generate_pack(run_id=None):
         "market": "BTCUSDT",
         "exchange": "BINANCE_FUTURES",
         "declared_symbols": ["BTCUSDT"],
-        "version": "1.2.0-forensic"
+        "version": "1.3.0-golden"
     }
-    with open(f"{base_dir}/run_manifest.json", "w") as f:
+    # Force LF endings for SHA256 integrity
+    with open(f"{base_dir}/run_manifest.json", "w", newline='\n') as f:
         json.dump(manifest, f, indent=2)
     
     # 2. gate_report.json
@@ -39,7 +40,7 @@ def generate_pack(run_id=None):
             {"name": "HANDOFF", "status": "PASS", "score": 10.0}
         ]
     }
-    with open(f"{base_dir}/gate_report.json", "w") as f:
+    with open(f"{base_dir}/gate_report.json", "w", newline='\n') as f:
         json.dump(report, f, indent=2)
     
     # 3. verify_proof_6.txt (EXACT 6 lines)
@@ -51,18 +52,19 @@ def generate_pack(run_id=None):
         "G5_COMPLIANCE: PASS | TRACE: CLEAN",
         f"G6_HANDOFF: PASS | ZIP_SHA: {hashlib.sha256(b'pack').hexdigest()[:12]}"
     ]
-    with open(f"{base_dir}/verify_proof_6.txt", "w") as f:
+    with open(f"{base_dir}/verify_proof_6.txt", "w", newline='\n') as f:
         f.write("\n".join(proof_lines) + "\n")
     
     # 4. manifest_sha256.txt
     file_hashes = []
-    for f in os.listdir(base_dir):
-        if f == "manifest_sha256.txt": continue
+    # Sort files to ensure deterministic manifest order
+    files = sorted([f for f in os.listdir(base_dir) if f != "manifest_sha256.txt"])
+    for f in files:
         with open(f"{base_dir}/{f}", "rb") as rb:
             h = hashlib.sha256(rb.read()).hexdigest()
             file_hashes.append(f"{h}  {f}")
     
-    with open(f"{base_dir}/manifest_sha256.txt", "w") as f:
+    with open(f"{base_dir}/manifest_sha256.txt", "w", newline='\n') as f:
         f.write("\n".join(file_hashes) + "\n")
     
     print(f"Generated synthetic proof pack: {base_dir}")
